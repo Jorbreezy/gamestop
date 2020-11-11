@@ -1,6 +1,5 @@
 // Update with your config settings.
 const path = require('path');
-require('dotenv').config({ path: path.resolve(__dirname, './.env') });
 
 const {
   DATABASE,

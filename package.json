@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "DEBUG=* nodemon ./bin/www",
-    "db:migrate": "knex migrate:latest",
-    "db:seeds": "knex seed:run",
+    "dev": "DEBUG=* nodemon -r dotenv/config ./bin/www",
+    "db:migrate": "node -r dotenv/config ./node_modules/knex/bin/cli.js migrate:latest",
+    "db:seeds": "node -r dotenv/config ./node_modules/knex/bin/cli.js seed:run",
     "db:setup": "npm run db:migrate && npm run db:seeds",
-    "db:rollback": "knex migrate:rollback"
+    "db:rollback": "node -r dotenv/config ./node_modules/knex/bin/cli.js migrate:rollback"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -22,6 +22,7 @@
     "pug": "2.0.0-beta11"
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "nodemon": "^2.0.6"
   }
 }
