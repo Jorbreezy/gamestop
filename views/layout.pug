@@ -6,11 +6,15 @@ html
   body
     block header
       header.header
-        h1 #{title}
+        h1 
+          a(href='/') #{title}
         div.options
           ul.list
-            li Games
-            li Studios
-            li Post
+            li 
+              a(href='/games') Games
+            li 
+              a(href='/studios') Studios
+            li 
+              a(href='/post') Post
             
     block content
