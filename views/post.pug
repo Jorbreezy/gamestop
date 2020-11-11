@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  div.container
+    div.subtitle
+      h2 Post game
+    form(action='/add_game', method='POST')
+      p
+        | title: 
+        input(type='text', name='title', value='')
+        |          price: 
+        input(type='number', name='price', value='')
+        |          studio: 
+        input(type='text', name='studio', value='')
+        |          type: 
+        input(type='text', name='type', value='')
+      input(type='submit', value='Submit')
