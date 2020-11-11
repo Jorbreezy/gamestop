@@ -4,7 +4,11 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "DEBUG=* nodemon ./bin/www"
+    "dev": "DEBUG=* nodemon ./bin/www",
+    "db:migrate": "knex migrate:latest",
+    "db:seeds": "knex seed:run",
+    "db:setup": "npm run db:migrate && npm run db:seeds",
+    "db:rollback": "knex migrate:rollback"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
