@@ -1,8 +1,31 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 a {
   color: #00B7FF;
+}
+
+header {
+  background-color: #00B7FF;
+  border: 1px solid;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+header h1 {
+  vertical-align: middle;
+}
+
+.list {
+  list-style-type: none;
+}
+
+.list li {
+  display: inline;
+  margin: 5px;
+  vertical-align: middle;
 }
