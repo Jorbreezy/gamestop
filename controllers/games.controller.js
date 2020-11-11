@@ -2,13 +2,13 @@ const db = require('../db/knex');
 
 exports.postGame = async (req, res, next) => {
   const {
-    title, studio, type, price,
+    title, studio, type, price, img
   } = req.body;
 
   try {
     await db('games')
       .insert({
-        studio, price, title, type,
+        studio, price, title, type, img
       });
 
     return next();
@@ -72,13 +72,13 @@ exports.getGameById = async (req, res, next) => {
 exports.updateGame = async (req, res, next) => {
   const { id } = req.params;
   const {
-    title, studio, type, price,
+    title, studio, type, price, img
   } = req.body;
 
   try {
     await db('games')
       .update({
-        title, studio, type, price,
+        title, studio, type, price, img
       })
       .where('id', id);
 
