@@ -7,7 +7,8 @@ const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const gamesRouter = require('./routes/games');
 const studioRouter = require('./routes/studios');
-const createRouter = require('./routes/createGames');
+const createGameRouter = require('./routes/createGames');
+const createStudioRouter = require('./routes/createStudio');
 
 const app = express();
 
@@ -22,7 +23,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter, gamesRouter, studioRouter);
-app.use('/games', createRouter)
+app.use('/games', createGameRouter);
+app.use('/studios', createStudioRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

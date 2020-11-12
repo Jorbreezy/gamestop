@@ -22,7 +22,7 @@ router.post('/studios/new', postStudio, (req, res) => {
 });
 
 router.post('/studios/:id/edit', updateStudio, (req, res) => {
-  res.status(200).send('Update Successfully');
+  res.redirect('/studios');
 });
 
 router.post('/studios/:id/delete', deleteStudio, (req, res) => {
