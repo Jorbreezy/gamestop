@@ -48,7 +48,6 @@ header a {
 }
 
 section {
-  border: 1px solid;
   border-radius: 25px;
   padding: 10px;
   margin-top: 5px;
@@ -57,7 +56,6 @@ section {
 }
 
 .content{
-  border: 1px solid;
   display: flex;
   flex-wrap: wrap;
   padding: 10px 15px;
@@ -133,4 +131,12 @@ form {
 
 .subtitle {
   text-align: center;
+}
+
+.tile {
+  margin: 5px;
+}
+
+.info {
+  margin-left: 10px;
 }

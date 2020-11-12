@@ -1,6 +1,6 @@
-const db = require('../db/db');
+const db = require('../db/knex');
 
-export const createstudio = async (req, res, next) => {
+exports.postStudio = async (req, res, next) => {
   const { name } = req.body;
 
   try {
@@ -13,7 +13,7 @@ export const createstudio = async (req, res, next) => {
   }
 };
 
-export const getStudios = async (req, res, next) => {
+exports.getStudios = async (req, res, next) => {
   try {
     const studioQuery = db
       .select('*')
@@ -27,7 +27,7 @@ export const getStudios = async (req, res, next) => {
   }
 };
 
-export const getStudioById = async (req, res, next) => {
+exports.getStudioById = async (req, res, next) => {
   const { id } = req.params;
 
   try {
@@ -45,7 +45,7 @@ export const getStudioById = async (req, res, next) => {
   }
 };
 
-export const updateStudio = async (req, res, next) => {
+exports.updateStudio = async (req, res, next) => {
   const { id } = req.params;
   const { name } = req.body;
 
@@ -60,7 +60,7 @@ export const updateStudio = async (req, res, next) => {
   }
 };
 
-export const deleteStudio = async (req, res, next) => {
+exports.deleteStudio = async (req, res, next) => {
   const { id } = req.params;
 
   try {

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  div.container
+    div.title
+      h1 #{game.title}
+    div.content
+      div.img
+        img.image(src=`${game.img}`, alt=`${game.title}`)
+      div.info
+        p Studio: #{game.studio}
+        p Price: #{game.price}
+        p Type: #{game.type}

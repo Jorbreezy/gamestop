@@ -6,7 +6,7 @@ block content
       h1 #{title}
     div.content
       each game in games
-        button.card(style=`background-image: url(${game.img})`)
+        button.card(style=`background-image: url(${game.img})` onclick=`moreInfo(${game.id})`)
           div.itemInfo
             div.itemTitle
               p #{game.title}
