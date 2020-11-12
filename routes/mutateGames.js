@@ -5,7 +5,7 @@ const {
  postGame
 } = require('../controllers/games.controller');
 
-router.get('/compose/new', (req, res) => {
+router.get('/new', (req, res) => {
   res.render('newGame');
 });
 

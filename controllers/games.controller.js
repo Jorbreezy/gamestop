@@ -11,9 +11,9 @@ exports.postGame = async (req, res, next) => {
         studio, price, title, type, img
       });
 
-    return next();
+    next();
   } catch (err) {
-    return next(err);
+    next(err);
   }
 };
 
@@ -43,9 +43,9 @@ exports.getGames = async (req, res, next) => {
 
     res.locals.games = await games;
 
-    return next();
+    next();
   } catch (err) {
-    return next(err);
+    next(err);
   }
 }; 
 
@@ -63,9 +63,9 @@ exports.getGameById = async (req, res, next) => {
 
     res.locals.game = gameQuery;
 
-    return next();
+    next();
   } catch (err) {
-    return next(err);
+    next(err);
   }
 };
 
@@ -82,9 +82,9 @@ exports.updateGame = async (req, res, next) => {
       })
       .where('id', id);
 
-    return next();
+    next();
   } catch (err) {
-    return next(err);
+    next(err);
   }
 };
 
@@ -96,8 +96,8 @@ exports.deleteGame = async (req, res, next) => {
       .del()
       .where('id', id);
 
-    return next();
+    next();
   } catch (err) {
-    return next(err);
+    next(err);
   }
 };
