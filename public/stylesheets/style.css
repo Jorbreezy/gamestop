@@ -140,3 +140,8 @@ form {
 .info {
   margin-left: 10px;
 }
+
+.img img {
+  width: 300px;
+  height: 450px;
+}
