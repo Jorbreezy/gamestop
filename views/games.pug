@@ -2,11 +2,14 @@ extends layout
 
 block content
   div.container
-    div.title
-      h1 #{title}
+    div.subheader
+      div.title
+        h1 #{title}
+      div.createNew
+        a(href='/games/compose/new') Create Game
     div.content
       each game in games
-        button.card(style=`background-image: url(${game.img})` onclick=`moreInfo(${game.id})`)
+        a.card(style=`background-image: url(${game.img})` href=`/games/${game.id}`)
           div.itemInfo
             div.itemTitle
               p #{game.title}
