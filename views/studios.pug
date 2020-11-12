@@ -5,15 +5,6 @@ block content
     div.title
       h1 #{title}
     div.content
-      div.card
-        p Treyarch
-      div.card 
-        p Ubisoft
-      div.card
-        p Bluepoint games
-      div.card
-        p Fromsoft
-      div.card
-        p Insomniac games
-      div.card
-        p Ubisoft
+      each studio in studios
+        div.tile 
+          p #{studio.name}

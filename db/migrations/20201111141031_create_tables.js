@@ -12,6 +12,7 @@ exports.up = (knex) => knex.schema
   table.increments().primary();
   table.string('title', 164).unique().notNullable();
   table.integer('price').notNullable();
+  table.string('img', 256).notNullable();
 
   table
     .integer('type')

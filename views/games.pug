@@ -5,15 +5,8 @@ block content
     div.title
       h1 #{title}
     div.content
-      div.card
-        p Call of Duty Cold War
-      div.card 
-        p Assassins Creed Valhalla
-      div.card
-        p Demon Souls
-      div.card
-        p Bloodborne
-      div.card
-        p Spider-man Miles Morales
-      div.card
-        p Watch Dogs Legion
+      each game in games
+        button.card(style=`background-image: url(${game.img})` onclick=`moreInfo(${game.id})`)
+          div.itemInfo
+            div.itemTitle
+              p #{game.title}
