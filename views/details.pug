@@ -5,9 +5,24 @@ block content
     div.title
       h1 #{game.title}
     div.content
-      div.img
-        img.image(src=`${game.img}`, alt=`${game.title}`)
-      div.info
-        p Studio: #{game.studio}
-        p Price: #{game.price}
-        p Type: #{game.type}
+      div.mainContent
+        section.info
+          div.img
+            img.image(src=`${game.img}`, alt=`${game.title}`)
+          div.info
+            form(action=`/games/${game.id}/edit`, method='POST')
+              p
+                | title: 
+                input(type='text', name='title', value=game.title)
+                |          price: 
+                input(type='number', name='price', value=game.price)
+                |          studio: 
+                input(type='text', name='studio', value=game.studio)
+                |          type: 
+                input(type='text', name='type', value=game.type)
+                |          img: 
+                input(type='text', name='img', value=game.img)
+              input(type='submit', value='Submit')
+        div.menu
+          form(action=`/games/${game.id}/delete`, method='POST')
+            input.delete(type='submit', value='Delete')

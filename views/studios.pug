@@ -2,8 +2,11 @@ extends layout
 
 block content
   div.container
-    div.title
-      h1 #{title}
+    div.subheader
+      div.title
+        h1 #{title}
+      div.createNew
+        a(href='/studios/compose/new') Create Studio
     div.content
       each studio in studios
         div.tile 

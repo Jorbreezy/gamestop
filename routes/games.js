@@ -13,10 +13,6 @@ router.get('/games', getGames, (req, res) => {
   res.render('games', { title: 'Games', games: res.locals.games });
 });
 
-router.get('/games/:id', getGameById, (req, res) => {
-  res.render('details', { game: res.locals.game });
-});
-
 router.get('/games/new', (req, res) => {
   res.render('newGame');
 });
@@ -25,8 +21,12 @@ router.post('/games/new', postGame, (req, res) => {
   res.redirect('/games');
 });
 
+router.get('/games/:id', getGameById, (req, res) => {
+  res.render('details', { game: res.locals.game });
+});
+
 router.post('/games/:id/edit', updateGame, (req, res) => {
-  res.status(200).send('Update Successfully');
+  res.redirect('/games');
 });
 
 router.post('/games/:id/delete', deleteGame, (req, res) => {

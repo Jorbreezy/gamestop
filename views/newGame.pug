@@ -3,8 +3,8 @@ extends layout
 block content
   div.container
     div.subtitle
-      h2 Post game
-    form(action='/post', method='POST')
+      h2 Create new game
+    form(action='/games/new', method='POST')
       p
         | title: 
         input(type='text', name='title', value='')
