@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "node -r dotenv/config ./bin/www --env=production",
     "dev": "DEBUG=* nodemon -r dotenv/config ./bin/www",
     "db:migrate": "node -r dotenv/config ./node_modules/knex/bin/cli.js migrate:latest",
     "db:seeds": "node -r dotenv/config ./node_modules/knex/bin/cli.js seed:run",
