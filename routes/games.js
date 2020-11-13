@@ -1,5 +1,6 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const csurfProtection = require('csurf')({ cookie: true });
+const router = express.Router();
 
 const {
   getGames,
@@ -13,8 +14,8 @@ router.get('/games', getGames, (req, res) => {
   res.render('games', { title: 'Games', games: res.locals.games });
 });
 
-router.get('/games/new', (req, res) => {
-  res.render('newGame');
+router.get('/games/new', csurfProtection, (req, res) => {
+  res.render('newGame', { csrfToken: req.csrfToken() });
 });
 
 router.post('/games/new', postGame, (req, res) => {
