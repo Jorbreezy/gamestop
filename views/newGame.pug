@@ -5,6 +5,7 @@ block content
     div.subtitle
       h2 Create new game
     form(action='/games/new', method='POST')
+      input(type='hidden' name='_csrf' value="{{csrfToken}}")
       p
         | title: 
         input(type='text', name='title', value='')

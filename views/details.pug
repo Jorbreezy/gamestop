@@ -11,6 +11,7 @@ block content
             img.image(src=`${game.img}`, alt=`${game.title}`)
           div.info
             form(action=`/games/${game.id}/edit`, method='POST')
+              input(type='hidden' name='_csrf' value="{{csrfToken}}")
               p
                 | title: 
                 input(type='text', name='title', value=game.title)

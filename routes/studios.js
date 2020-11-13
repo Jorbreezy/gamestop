@@ -6,8 +6,8 @@ const {
   getStudios, postStudio, updateStudio, deleteStudio
 } = require('../controllers/studios.controller');
 
-router.get('/studios', getStudios, (req, res) => {
-  res.render('studios', { title: 'Studios', studios: res.locals.studios });
+router.get('/studios', csurfProtection, getStudios, (req, res) => {
+  res.render('studios', { title: 'Studios', studios: res.locals.studios, csurfToken: req.csrfToken() });
 });
 
 router.get('/studios/new', csurfProtection, (req, res) => {

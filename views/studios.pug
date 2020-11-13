@@ -11,9 +11,10 @@ block content
       each studio in studios
         div.tile 
           form(action=`/studios/${studio.id}/edit`, method='POST')
-              p 
-                input(type='text', name='name', value=studio.name)
-              input(type='submit', value='Edit')
+            input(type='hidden' name='_csrf' value="{{csrfToken}}")
+            p 
+              input(type='text', name='name', value=studio.name)
+            input(type='submit', value='Edit')
           div.menu
             form(action=`/studios/${studio.id}/delete`, method='POST')
               input.delete(type='submit', value='Delete')

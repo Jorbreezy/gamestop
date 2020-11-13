@@ -22,8 +22,8 @@ router.post('/games/new', postGame, (req, res) => {
   res.redirect('/games');
 });
 
-router.get('/games/:id', getGameById, (req, res) => {
-  res.render('details', { game: res.locals.game });
+router.get('/games/:id', csurfProtection, getGameById, (req, res) => {
+  res.render('details', { game: res.locals.game, csrfToken: req.csrfToken() });
 });
 
 router.post('/games/:id/edit', updateGame, (req, res) => {
