@@ -6,8 +6,14 @@ block content
       div.title
         h1 #{title}
       div.createNew
-        a(href='/studios/compose/new') Create Studio
+        a(href='/studios/new') Create Studio
     div.content
       each studio in studios
         div.tile 
-          p #{studio.name}
+          form(action=`/studios/${studio.id}/edit`, method='POST')
+              p 
+                input(type='text', name='name', value=studio.name)
+              input(type='submit', value='Edit')
+          div.menu
+            form(action=`/studios/${studio.id}/delete`, method='POST')
+              input.delete(type='submit', value='Delete')
