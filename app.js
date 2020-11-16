@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const helmet = require('helmet');
+const winston = require('./config/winston');
 
 const indexRouter = require('./routes/index');
 const gamesRouter = require('./routes/games');
@@ -17,7 +18,7 @@ app.set('view engine', 'pug');
 
 app.use(helmet());
 
-app.use(logger('dev'));
+app.use(logger('combined', { stream: winston.stream }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -36,9 +37,11 @@ app.use(function(err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
+  winston.error(`${err.status || 500} - ${err.message} - ${req.originalURL} - ${req.method} - ${req.ip} `)
+
   // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+  res.status(err.status || 500).render('error');
+  
 });
 
 module.exports = app;
