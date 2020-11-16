@@ -1,13 +1,23 @@
 const express = require('express');
-const csurfProtection = require('csurf')({ cookie: true });
-const router = express.Router();
+const csurf = require('csurf');
 
+const router = express.Router();
+const csurfProtection = csurf({ cookie: true });
 const {
-  getStudios, postStudio, updateStudio, deleteStudio
+  getStudios,
+  postStudio,
+  updateStudio,
+  deleteStudio
 } = require('../controllers/studios.controller');
 
 router.get('/studios', csurfProtection, getStudios, (req, res) => {
-  res.render('studios', { title: 'Studios', studios: res.locals.studios, csurfToken: req.csrfToken() });
+  const studioTemplateData = {
+    title: 'Studios', 
+    studios: res.locals.studios,
+    csurfToken: req.csrfToken()
+  };
+
+  res.render('studios', studioTemplateData);
 });
 
 router.get('/studios/new', csurfProtection, (req, res) => {

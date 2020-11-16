@@ -1,7 +1,8 @@
 const express = require('express');
-const csurfProtection = require('csurf')({ cookie: true });
-const router = express.Router();
+const csurf = require('csurf');
 
+const router = express.Router();
+const csurfProtection = csurf({ cookie: true });
 const {
   getGames,
   postGame,
