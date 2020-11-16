@@ -5,6 +5,7 @@ block content
     div.subtitle
       h2 Create new studio
     form(action='/studios/new', method='POST')
+      input(type='hidden' name='_csrf' value="{{csrfToken}}")
       p
         | title: 
         input(type='text', name='name', value='')
