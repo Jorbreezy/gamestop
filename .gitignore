@@ -117,3 +117,5 @@ dist
 
 examples
 .examples
+
+cypress.env.json

@@ -19,7 +19,6 @@
 const configOptions = require('../../knexfile')['development'];
 const knex = require('knex')(configOptions);
 
-
 module.exports = (on, config) => {
   on('task', {
     'db:rollback': () => {
@@ -32,4 +31,6 @@ module.exports = (on, config) => {
       return knex.seed.run();
     }
   })
+
+  return config;
 }
