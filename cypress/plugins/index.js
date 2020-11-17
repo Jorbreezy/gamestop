@@ -16,7 +16,7 @@
  * @type {Cypress.PluginConfig}
  */
 
-const configOptions = require('../../knexfile')['test'];
+const configOptions = require('../../knexfile')['development'];
 const knex = require('knex')(configOptions);
 
 

@@ -38,10 +38,10 @@ module.exports = {
       port: DB_PORT,
     },
     migrations: {
-      directory: path.join(__dirname, '/server/db/migrations'),
+      directory: path.join(__dirname, '/db/migrations'),
     },
     seeds: {
-      directory: path.join(__dirname, '/server/db/seeds'),
+      directory: path.join(__dirname, '/db/seeds'),
     },
   },
 };

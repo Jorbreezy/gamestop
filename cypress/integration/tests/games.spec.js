@@ -1,5 +1,3 @@
-// const knex = require('../../../db/knex');
-
 context('Games', () => {
   before(() => {
     cy.task('db:rollback');
@@ -45,6 +43,17 @@ context('Games', () => {
       });
     });
 
+    it('Should edit game data', () => {
+      cy.get('form').within(($form) => {
+        cy.get('input[name="title"]').invoke('val', 'Dark Souls 3');
+        cy.get('input[name="price"]').invoke('val', 60);
+        cy.get('input[name="studio"]').invoke('val', 1);
+        cy.get('input[name="type"]').invoke('val', 1);
+        cy.get('input[name="img"]').invoke('val', 'https://upload.wikimedia.org/wikipedia/en/b/bb/Dark_souls_3_cover_art.jpg');
+        cy.get('input[value="Edit"]').click();
+      });
+    });
+
   });
 
   describe('New game', () => {
@@ -72,13 +81,14 @@ context('Games', () => {
     it('Should Submit data', () => {
       cy.get('input[type="submit"]').click();
     });
+  });
 
-    after(() => {
-      cy.task('db:rollback');
-      cy.task('db:latest');
-      cy.task('db:seed');
+  describe('Delete game', () => {
+    it('Should delete a game', () => {
+      cy.visit('http://localhost:3000/games/7');
+      
+      cy.get('input[value="Delete"]').click();
     });
-
   });
 
 });
