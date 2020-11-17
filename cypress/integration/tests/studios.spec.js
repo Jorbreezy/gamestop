@@ -7,7 +7,7 @@ context('Studios', () => {
 
   describe('Studio Data', () => {
     beforeEach(() => {
-      cy.visit('http://localhost:3000/studios');
+      cy.visit('/studios');
     });
 
     it('Should have title studios', () => {
@@ -24,7 +24,7 @@ context('Studios', () => {
 
   describe('New Studio', () => {
     it('Should navigate to new studio', () => {
-      cy.visit('http://localhost:3000/studios/new');
+      cy.visit('/studios/new');
 
       cy.url().should('include', '/studios/new');
     });

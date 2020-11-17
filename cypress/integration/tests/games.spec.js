@@ -7,7 +7,7 @@ context('Games', () => {
 
   describe('Games Data', () => {
     beforeEach(() => {
-      cy.visit('http://localhost:3000/games');
+      cy.visit('/games');
     });
 
     it('Should have title games', () => {
@@ -58,7 +58,7 @@ context('Games', () => {
 
   describe('New game', () => {
     it('Should navigate to new game', () => {
-      cy.visit('http://localhost:3000/games');
+      cy.visit('/games');
       cy.get('.createNew').find('a').first().click();
 
       cy.url().should('include', '/games/new');
@@ -85,7 +85,7 @@ context('Games', () => {
 
   describe('Delete game', () => {
     it('Should delete a game', () => {
-      cy.visit('http://localhost:3000/games/7');
+      cy.visit('/games/7');
       
       cy.get('input[value="Delete"]').click();
     });
