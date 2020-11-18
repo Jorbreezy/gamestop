@@ -1,24 +1,26 @@
 extends layout
 
 block content
-  div.container
+  div.container.mx-auto(class="lg:container lg:mx-auto")
     div.title
-      h1 Welcome to Gamestop
-    section.games
-      div.subtitle
-        h2 Newly Released
-      div.card
-        p Call of Duty Cold War
-      div.card
-        p Spiderman Miles Morales
-      div.card
-        p Demon Souls
-    section.studios
-      div.subtitle
-        h2 Popular Studios
-      div.card
-        p Treyarch
-      div.card
-        p Insomniac Games
-      div.card
-        p FromSoft
+      h2.text-2xl.font-bold Welcome To Gamestop
+    section.games.min-h-full
+      div.subtitle.mb-4
+        h2.text-lg.font-medium Newly Released
+      div.info.flex.justify-evenly
+        div.game.inline-block
+          p Call of Duty Cold War
+        div.game.inline-block
+          p Spiderman Miles Morales
+        div.game.inline-block
+          p Demon's Souls Remake
+    section.studios.min-h-full
+      div.subtitle.mb-4
+        h2.text-lg.font.medium Popular Studios
+      div.info.flex.justify-evenly
+        div.studio.inline-block
+          p Treyarch
+        div.studio.inline-block
+          p Insomniac Games
+        div.studio.inline-block
+          p Bluepoint games
