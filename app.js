@@ -16,7 +16,7 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.use(helmet());
+// app.use(helmet());
 
 app.use(logger('combined', { stream: winston.stream }));
 app.use(express.json());

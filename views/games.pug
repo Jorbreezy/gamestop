@@ -1,15 +1,14 @@
 extends layout
 
 block content
-  div.container
-    div.subheader
-      div.title
-        h1 #{title}
-      div.createNew
+  div.container(class="lg:container lg:mx-auto")
+    div.subheader.flex.justfiy-between.mb-4
+      div.subtitle
+        h1.text-xl #{title}
+      div.createNew.text-lg
         a(href='/games/new') Create Game
-    div.content
+    div.flex.items-center.flex-wrap.p-4.bg-gray-300.rounded.justify-evenly
       each game in games
-        a.card(style=`background-image: url(${game.img})` href=`/games/${game.id}`)
-          div.itemInfo
-            div.itemTitle
-              p #{game.title}
+        a.relative.m-5.bg-cover.bg-center.bg-no-repeat.w-64.h-96(style=`background-image: url(${game.img})` href=`/games/${game.id}`)
+          div.h-8.absolute.bottom-0.w-full.text-white.text-center.bg-black.bg-opacity-60
+            p.text-lg #{game.title}
