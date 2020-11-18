@@ -1,26 +1,27 @@
 extends layout
 
 block content
-  div.container.mx-auto(class="lg:container lg:mx-auto")
+  div.container.mx-auto(class="lg:container lg:mx-auto").text-center.mt-5
     div.title
       h2.text-2xl.font-bold Welcome To Gamestop
-    section.games.min-h-full
-      div.subtitle.mb-4
-        h2.text-lg.font-medium Newly Released
-      div.info.flex.justify-evenly
-        div.game.inline-block
-          p Call of Duty Cold War
-        div.game.inline-block
-          p Spiderman Miles Morales
-        div.game.inline-block
-          p Demon's Souls Remake
-    section.studios.min-h-full
-      div.subtitle.mb-4
-        h2.text-lg.font.medium Popular Studios
-      div.info.flex.justify-evenly
-        div.studio.inline-block
-          p Treyarch
-        div.studio.inline-block
-          p Insomniac Games
-        div.studio.inline-block
-          p Bluepoint games
+    div.mainContent.bg-gray-300.rounded-2xl.p-5
+      section.games.min-h-full.m-5
+        div.subtitle.mb-2.font-medium
+          h2.text-lg.font-medium Newly Released
+        div.info.flex.justify-evenly
+          div.game.inline-block
+            p Call of Duty Cold War
+          div.game.inline-block
+            p Spiderman Miles Morales
+          div.game.inline-block
+            p Demon's Souls Remake
+      section.studios.min-h-full.m-5
+        div.subtitle.mb-2.font-medium
+          h2.text-lg.font.medium Popular Studios
+        div.info.flex.justify-evenly
+          div.studio.inline-block
+            p Treyarch
+          div.studio.inline-block
+            p Insomniac Games
+          div.studio.inline-block
+            p Bluepoint games
