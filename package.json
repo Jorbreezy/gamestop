@@ -6,7 +6,7 @@
     "start": "node -r dotenv/config ./bin/www --env=production",
     "dev": "DEBUG=* nodemon -r dotenv/config ./bin/www",
     "test": "node -r dotenv/config ./node_modules/.bin/cypress run --env ENVIRONMENT=test",
-    "test:cli": "node -r dotenv/config ./node_modules/.bin/cypress open --env ENVIRONMENT=test",
+    "test:interactive": "node -r dotenv/config ./node_modules/.bin/cypress open --env ENVIRONMENT=test",
     "db:migrate": "node -r dotenv/config ./node_modules/knex/bin/cli.js migrate:latest",
     "db:seeds": "node -r dotenv/config ./node_modules/knex/bin/cli.js seed:run",
     "db:setup": "npm run db:migrate && npm run db:seeds",

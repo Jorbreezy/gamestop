@@ -2,20 +2,21 @@
 const path = require('path');
 
 const {
-  DATABASE,
+  DEVDB,
   CLIENT,
   DB_USER,
   DB_PASSWORD,
   DB_HOST,
   DB_PORT,
-  DATABASE2
+  TESTDB
+
 } = process.env;
 
 module.exports = {
   development: {
     client: CLIENT,
     connection: {
-      database: DATABASE,
+      database: DEVDB,
       user: DB_USER,
       password: DB_PASSWORD,
       host: DB_HOST,
@@ -31,7 +32,7 @@ module.exports = {
   test: {
     client: CLIENT,
     connection: {
-      database: DATABASE2,
+      database: TESTDB,
       user: DB_USER,
       password: DB_PASSWORD,
       host: DB_HOST,
