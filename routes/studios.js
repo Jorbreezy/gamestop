@@ -21,7 +21,7 @@ router.get('/studios', csurfProtection, getStudios, (req, res) => {
 });
 
 router.get('/studios/new', csurfProtection, (req, res) => {
-  res.render('newStudio', { csurfToken: req.csurfToken() });
+  res.render('newStudio', { csurfToken: req.csrfToken() });
 });
 
 router.post('/studios/new', postStudio, (req, res) => {
