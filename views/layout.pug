@@ -4,15 +4,14 @@ html
     title= title
     link(href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet")
   body
-    nav.flex.items-center.justify-between.flex-wrap.bg-red-600.p-6
-      div.flex.items-center.flex-shrink-0.text-white.mr-6
-        span.font-semibold.text-xl.tracking-tight
+    nav(class="flex items-center justify-between flex-wrap bg-red-600 p-6")
+      div(class="flex items-center flex-shrink-0 text-white mr-6")
+        span(class="font-semibold text-xl tracking-tight")
           a(href="/") Gamestop
-      div.w-auto.block(class="lg:flex lg:items-right lg:w-auto")
-        div.text-md(class="lg:flex-grow md:flex-grow sm:flex-grow")
-          a.mt-4(href="/games" class="lg:inline lg:mt-0 text-white hover:text-black mr-4") 
+      div(class="lg:flex lg:items-right lg:w-auto w-auto block")
+        div(class="lg:flex-grow md:flex-grow sm:flex-grow text-md")
+          a(href="/games" class="lg:inline lg:mt-0 text-white hover:text-black mr-4 mt-4") 
             | Games
-          a.mt-4(href="/studios" class="lg:inline lg:mt-0 text-white hover:text-black mr-4") 
+          a(href="/studios" class="lg:inline lg:mt-0 text-white hover:text-black mr-4 mt-4") 
             | Studios
-
     block content

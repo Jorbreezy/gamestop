@@ -1,10 +1,10 @@
 extends layout
 
 block content
-  div.container(class="lg:container lg:mx-auto")
-    div.subheader.text-center.mb-4.w-full
-      div.subtitle
-        h1.text-2xl.font-bold Create a new game
+  div(class="container lg:container lg:mx-auto")
+    div(class="subheader text-center mb-4 w-full")
+      div(class="subtitle")
+        h1(class="text-2xl font-bold") Create a new game
     form(action='/games/new', method='POST')
       input(type='hidden' name='_csrf' value="{{csrfToken}}")
       p

@@ -1,18 +1,18 @@
 extends layout
 
 block content
-  div.container(class="lg:container lg:mx-auto sm:mx-auto md:mx-auto").mt-5
-    div.subheader.text-center.mb-4.w-full
-      div.subtitle
-        h1.text-xl.font-bold #{game.title}
-    div.content.flex.relative
-      section.left
-        div.w-72.flex-grow-1
-          img.w-80.h-96(src=`${game.img}`, alt=`${game.title}`)
-        div.bottom-0.absolute.left-0
+  div(class="container lg:container lg:mx-auto sm:mx-auto md:mx-auto mt-5")
+    div(class="subheader text-center mb-4 w-full")
+      div(class="subtitle")
+        h1(class="text-xl font-bold") #{game.title}
+    div(class="content flex relative")
+      section(class="left")
+        div(class="w-72 flex-grow-1")
+          img(src=`${game.img}`, alt=`${game.title}` class="w-80 h-96")
+        div(class="bottom-0 absolute left-0")
           form(action=`/games/${game.id}/delete`, method='POST')
-            input.delete(type='submit', value='Delete' class="w-24 rounded-lg bg-red-500 px-4 py-3 hover:bg-red-700 cursor-pointer")
-      section.flex-grow-2.px-5
+            input(type='submit', value='Delete' class="delete w-24 rounded-lg bg-red-500 px-4 py-3 hover:bg-red-700 cursor-pointer")
+      section(class="flex-grow-2 px-5")
         form(action=`/games/${game.id}/edit`, method='POST')
           input(type='hidden' name='_csrf' value="{{csrfToken}}")
           p
