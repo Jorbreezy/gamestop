@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 
 const {
-  getNews
-} = require('../controllers/news.controller');
+  getArticles
+} = require('../controllers/articles.controller');
 
-router.get('/news', getNews, (req, res) => {
-  res.render('news', { news: res.locals.news });
+router.get('/news', getArticles, (req, res) => {
+  res.render('news', { articles: res.locals.articles });
 });
 
 module.exports = router;
