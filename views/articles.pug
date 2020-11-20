@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  div(class="container lg grid grid-cols-5 p-4 bg-gray-300 rounded-2xl mx-auto mt-5")
+    each article in articles
+      a(style=`background-image: url(${article.image.original})` href=`/articles/${article.name}` class="relative m-5 bg-cover bg-center bg-no-repeat w-64 h-96")
+        div(class="h-8 absolute bottom-0 w-full text-white text-center bg-black bg-opacity-60")
+          p(class="text-lg") #{article.name}

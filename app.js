@@ -9,6 +9,7 @@ const winston = require('./config/winston');
 const indexRouter = require('./routes/index');
 const gamesRouter = require('./routes/games');
 const studioRouter = require('./routes/studios');
+const articleRouter = require('./routes/articles');
 
 const app = express();
 
@@ -24,7 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter, gamesRouter, studioRouter);
+app.use('/', indexRouter, gamesRouter, studioRouter, articleRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
