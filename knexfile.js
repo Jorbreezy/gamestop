@@ -9,6 +9,7 @@ const {
   DB_HOST,
   DB_PORT,
   TESTDB
+
 } = process.env;
 
 module.exports = {

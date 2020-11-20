@@ -2,17 +2,16 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet")
   body
-    block header
-      header.header
-        h1 
-          a(href='/') Gamestop
-        div.options
-          ul.list
-            li 
-              a(href='/games') Games
-            li 
-              a(href='/studios') Studios
-            
+    nav(class="flex items-center justify-between flex-wrap bg-red-600 p-6")
+      div(class="flex items-center flex-shrink-0 text-white mr-6")
+        span(class="font-semibold text-xl tracking-tight")
+          a(href="/") Gamestop
+      div(class="lg:flex lg:items-right lg:w-auto w-auto block")
+        div(class="lg:flex-grow md:flex-grow sm:flex-grow text-md")
+          a(href="/games" class="lg:inline lg:mt-0 text-white hover:text-black mr-4 mt-4") 
+            | Games
+          a(href="/studios" class="lg:inline lg:mt-0 text-white hover:text-black mr-4 mt-4") 
+            | Studios
     block content

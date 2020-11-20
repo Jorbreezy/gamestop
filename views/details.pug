@@ -1,29 +1,29 @@
 extends layout
 
 block content
-  div.container
-    div.title
-      h1 #{game.title}
-    div.content
-      div.mainContent
-        section.info
-          div.img
-            img.image(src=`${game.img}`, alt=`${game.title}`)
-          div.info
-            form(action=`/games/${game.id}/edit`, method='POST')
-              input(type='hidden' name='_csrf' value="{{csrfToken}}")
-              p
-                | title: 
-                input(type='text', name='title', value=game.title)
-                |          price: 
-                input(type='number', name='price', value=game.price)
-                |          studio: 
-                input(type='text', name='studio', value=game.studio)
-                |          type: 
-                input(type='text', name='type', value=game.type)
-                |          img: 
-                input(type='text', name='img', value=game.img)
-              input(type='submit', value='Edit')
-        div.menu
+  div(class="container lg:container lg:mx-auto sm:mx-auto md:mx-auto mt-5")
+    div(class="subheader text-center mb-4 w-full")
+      div(class="subtitle")
+        h1(class="text-xl font-bold") #{game.title}
+    div(class="content flex relative")
+      section(class="left")
+        div(class="w-72 flex-grow-1")
+          img(src=`${game.img}`, alt=`${game.title}` class="w-80 h-96")
+        div(class="bottom-0 absolute left-0")
           form(action=`/games/${game.id}/delete`, method='POST')
-            input.delete(type='submit', value='Delete')
+            input(type='submit', value='Delete' class="delete w-24 rounded-lg bg-red-500 px-4 py-3 hover:bg-red-700 cursor-pointer")
+      section(class="flex-grow-2 px-5")
+        form(action=`/games/${game.id}/edit`, method='POST')
+          input(type='hidden' name='_csrf' value="{{csrfToken}}")
+          p
+            | Title: 
+            input(type='text', name='title', value=game.title class="w-full px-4 py-3 border-solid border-2 border-gray-300 rounded-lg mb-2 outline-none")
+            |          Price: 
+            input(type='number', name='price', value=game.price class="w-full px-4 py-3 border-solid border-2 border-gray-300 rounded-lg mb-2 outline-none")
+            |          Studio: 
+            input(type='text', name='studio', value=game.studio class="w-full px-4 py-3 border-solid border-2 border-gray-300 rounded-lg mb-2 outline-none")
+            |          Type: 
+            input(type='text', name='type', value=game.type class="w-full px-4 py-3 border-solid border-2 border-gray-300 rounded-lg mb-2 outline-none")
+            |          Img: 
+            input(type='text', name='img', value=game.img class="w-full px-4 py-3 border-solid border-2 border-gray-300 rounded-lg mb-2 outline-none")
+          input(type='submit', value='Edit' class="w-full rounded-lg bg-green-500 px-4 py-3 hover:bg-green-700 cursor-pointer")
